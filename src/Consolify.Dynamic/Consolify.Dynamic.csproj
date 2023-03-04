@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<AnalysisMode>All</AnalysisMode>
+		<AnalysisLevel>preview-all</AnalysisLevel>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<SignAssembly>False</SignAssembly>
+		<Title>Consolify.Dynamic</Title>
+		<ErrorReport>none</ErrorReport>
+		<Authors>Noel Horváth</Authors>
+		<Description>Consolify.Dynamic</Description>
+		<PackageProjectUrl>https://github.com/noelhorvath/Consolify</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/noelhorvath/Consolify</RepositoryUrl>
+		<PackageReleaseNotes>Initial beta release</PackageReleaseNotes>
+		<Version>1.0.0-beta230301</Version>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<WarningLevel>9999</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<WarningLevel>9999</WarningLevel>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Meziantou.Analyzer" Version="2.0.19">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Consolify.Base.Dynamic\Consolify.Base.Dynamic.csproj" />
+		<ProjectReference Include="..\Consolify.Base\Consolify.Base.csproj" />
+		<ProjectReference Include="..\Consolify.Core\Consolify.Core.csproj" />
+	</ItemGroup>
+</Project>
